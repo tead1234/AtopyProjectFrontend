@@ -4,7 +4,16 @@
   position: relative;
   overflow: hidden;
   animation: fadein 4s ease-in-out;
-  background: url(./image/background.jpg);
+  
+}
+.mainTitle{
+  position: relative;
+  top: -150px;
+  margin: 5%;
+  font-size: 50px;
+}
+.container-subtitle{
+  display: flex;
 }
 
 
@@ -28,7 +37,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  background: url(./image/background.jpg);
 }
 
 .App-link {

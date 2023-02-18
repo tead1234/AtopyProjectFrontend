@@ -1,7 +1,8 @@
-function MainTitle(){
+function MainTitle(props){
     return(
-        <div>
+        <div className="mainTitle">
             This is Main Title
+            Today's skinState는 {props.skinState}
         </div>
     );
 }
