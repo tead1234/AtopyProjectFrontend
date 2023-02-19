@@ -2,8 +2,8 @@
   text-align: center;
   font-size: medium;
   position: relative;
-  overflow: hidden;
-  animation: fadein 4s ease-in-out;
+  /* overflow: hidden;
+  animation: fadein 4s ease-in-out; */
   
 }
 .mainTitle{
@@ -11,18 +11,24 @@
   top: -150px;
   margin: 5%;
   font-size: 50px;
+  overflow: hidden;
+  animation: fadein 4s ease-in-out;
 }
 .container-subtitle{
   display: flex;
+  animation: fadein 4s ease-in-out;
 }
 .subTitleForEating{
   flex : 1;
+  animation: fadein 4s ease-in-out;
 }
 .subTitleForSleep{
   flex : 1;
+  animation: fadein 4s ease-in-out;
 }
 .subTitleForExercise{
   flex : 1;
+  animation: fadein 4s ease-in-out;
 }
 
 
