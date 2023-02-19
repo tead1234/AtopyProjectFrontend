@@ -15,6 +15,16 @@
 .container-subtitle{
   display: flex;
 }
+.subTitleForEating{
+  flex : 1;
+}
+.subTitleForSleep{
+  flex : 1;
+}
+.subTitleForExercise{
+  flex : 1;
+}
+
 
 
 .App-logo {

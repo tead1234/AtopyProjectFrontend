@@ -1,9 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ContainerForSubTitle from './component/ContainerForSubTitle';
 import MainTitle from './component/mainTitle';
 import SubTitleForEating from './component/SubTitleForEating';
-import background from './image/background.jpg';
+import ContainerForSubTitle from './component/ContainerForSubTitle';
 function App() {
 
   // example json data = 
@@ -17,9 +16,7 @@ function App() {
     <div className="App" >
       <header className="App-header">
           <MainTitle skinState = {a.skinState}></MainTitle>
-          <SubTitleForEating sleepTime = {a.sleepTime}></SubTitleForEating>
-        {/* <ContainerForSubTitle> */}
-        {/* </ContainerForSubTitle> */}
+          <ContainerForSubTitle sleepTime= {a.sleepTime}></ContainerForSubTitle>
       </header>
     </div>
   );
