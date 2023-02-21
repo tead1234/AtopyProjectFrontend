@@ -1,8 +1,7 @@
 function MainTitle(props){
     return(
         <div className="mainTitle">
-            This is Main Title
-            Today's skinState는 {props.skinState}
+            오늘의 피부 상태는 어떤가요? {props.skinState}
         </div>
     );
 }

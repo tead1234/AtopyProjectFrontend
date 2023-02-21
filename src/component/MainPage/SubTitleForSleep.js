@@ -6,13 +6,7 @@ function SubTitleForSleep(props){
         <div className="subTitleForSleep">
             This is SubTitleForEating Title
             Today's sleepTime is {props.sleepTime}
-            <div style={
-                {position : "relative",
-                top : "50px",
-               }
-                }>
-                <Button>click</Button>
-            </div>
+            
         </div>
     );
 }
