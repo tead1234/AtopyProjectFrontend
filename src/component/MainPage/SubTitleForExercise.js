@@ -4,7 +4,7 @@ function SubTitleForExercise(props){
     return(
         <div className="subTitleForExercise">
             This is SubTitleForExercise Title
-            Today's sleepTime is {props.sleepTime}
+            Today's sleepTime is {props.exercise}
             
         </div>
     );

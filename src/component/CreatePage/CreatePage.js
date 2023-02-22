@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
+import axios from 'axios';
 const CreatePage = () => {
   const [values, setValues] = useState({
     date : new Date(),
@@ -11,10 +12,21 @@ const CreatePage = () => {
     sleepTime: 0,
     exercise: 0,
   })
-
+  // axios post 요청
+  function createApi(valuse) {
+    const url = "http://localhost:8080/create";
+    axios.post(url, values)
+    .then(function(response) {
+      console.log(values, response);
+        console.log("성공");
+    })
+    .catch(function(error) {
+        console.log("실패");
+    })
+    
+}
 
    const handleSubmit = e => {
-    e.preventDefault();
     const form = e.target;
     setValues((e) => ({
       ...values,
@@ -28,8 +40,8 @@ const CreatePage = () => {
     // 에러 값을 설정하고
     // 잘못된 값이면 제출 처리를 중단한다.
     
-    setValues((values) => (console.log(values)));
     alert(JSON.stringify(values, null))
+    createApi(JSON.stringify(values, null));
   }
     return(
       <div className='Modal'>

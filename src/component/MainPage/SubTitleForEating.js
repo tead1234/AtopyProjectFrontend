@@ -5,7 +5,7 @@ function SubTitleForEating(props){
         
             <div className="subTitleForEating">
                 This is SubTitleForEating Title
-                Today's sleepTime is {props.sleepTime}
+                Today's sleepTime is {props.morning}
                 
             </div>
             
