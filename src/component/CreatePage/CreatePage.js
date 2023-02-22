@@ -1,24 +1,40 @@
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
+import { useState } from 'react';
 const CreatePage = () => {
-  const validate = values => {
-    const errors = {
-      피부상태: "",
-      수면시간: "",
-      운동시간: "",
-    }
-    const errorType = ["피부상태","수면시간","운동시간"]
+  const [values, setValues] = useState({
+    date : new Date(),
+    skinState: 0,
+    morning : "",
+    lunch : "",
+    dinner : "",
+    sleepTime: 0,
+    exercise: 0,
+  })
 
-    {
-      errorType.forEach((err)=>{
-        if(!values)
-      });
-    }
-    return errors
+
+   const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    setValues((e) => ({
+      ...values,
+      skinState: form.skinState.value,
+      morning: form["morning-food"].value, 
+      lunch: form["lunch-food"].value,
+      dinner: form["dinner-food"].value,
+      sleepTime: form.sleepTime.value,
+      exercise: form.exercise.value 
+    }))
+    // 에러 값을 설정하고
+    // 잘못된 값이면 제출 처리를 중단한다.
+    
+    setValues((values) => (console.log(values)));
+    alert(JSON.stringify(values, null))
   }
     return(
-        <Form>
-          <div className='form-group' style={{width : "300px"}}>
+      <div className='Modal'>
+          <Form  onSubmit={handleSubmit}>
+          <div className='model-body'>
           <Form.Group className="form-control" controlId="formSkinState">
           <Form.Label>피부상태</Form.Label>
           <Form.Control type= "text" name='skinState'/>
@@ -33,14 +49,13 @@ const CreatePage = () => {
           <Form.Label>운동시간</Form.Label>
           <Form.Control type="text" name = "exercise"/>
           </Form.Group>
-          </div>
-          
-       
-        
         <Button variant="primary" type="submit">
           Submit
         </Button>
+        </div>
       </Form>
+      </div>
+        
     )
 }
 export default CreatePage; 
