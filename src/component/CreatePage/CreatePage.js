@@ -1,8 +1,8 @@
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-const CreatePage = () => {
+const CreatePage = (props) => {
   const [values, setValues] = useState({
     date : new Date(),
     skinState: 0,
@@ -27,6 +27,7 @@ const CreatePage = () => {
 }
 
    const handleSubmit = e => {
+    e.preventDefault();
     const form = e.target;
     setValues((e) => ({
       ...values,
@@ -39,10 +40,11 @@ const CreatePage = () => {
     }))
     // 에러 값을 설정하고
     // 잘못된 값이면 제출 처리를 중단한다.
-    
-    alert(JSON.stringify(values, null))
-    createApi(JSON.stringify(values, null));
   }
+  useEffect(() => {
+    // values 상태가 업데이트될 때마다 실행되는 콜백 함수
+    createApi(JSON.stringify(values, null));
+  }, [values]);
     return(
       <div className='Modal'>
           <Form  onSubmit={handleSubmit}>

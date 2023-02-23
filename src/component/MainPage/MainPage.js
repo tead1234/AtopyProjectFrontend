@@ -19,7 +19,7 @@ function MainPage(props){
           </Link>
           <Button variant='secondary' onClick={() => {setSwitch(!Switch)}} style={{position : "relative", top : "70px"}}>오늘 상태 기록하기</Button>
           {
-                Switch? <CreatePage></CreatePage> : null
+                Switch? <CreatePage Switch = {Switch} setSwitch = {setSwitch}></CreatePage> : null
           }
         </div>
     );

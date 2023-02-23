@@ -9,6 +9,7 @@ import ContainerForSubTitle from './component/MainPage/ContainerForSubTitle';
 import Button from 'react-bootstrap/Button';
 import MainPage from './component/MainPage/MainPage';
 import CreatePage from './component/CreatePage/CreatePage';
+import SpecificPage from './component/SpecifiPage.js/SpecificPage';
 function App() {
   const [data, setData] = useState([]);
   let [Switch, setSwitch] = useState(true);
@@ -26,6 +27,14 @@ function App() {
         console.log(response);
         if(state == "sleepTime"){
           setSleepTime(response.data.data[0]);
+        }if(state == "morning"){
+          setMorning(response.data.data[0]);
+        }if(state == "lunch"){
+          setLunch(response.data.data[0]);
+        }if(state == "dinner"){
+          setDinner(response.data.data[0]);
+        }if(state == "exercise"){
+          setExercise(response.data.data[0]);
         }
       }).catch((err) => {
         console.log(err);
@@ -43,7 +52,7 @@ function App() {
             <Route path='/' element= {
                 <MainPage  morning ={morning} lunch = {lunch} dinner = {dinner} sleepTime = {sleepTime} exercise = {exercise}/>
                 }></Route>
-            <Route path='/create' element = {<CreatePage/>}></Route>
+            <Route path='/specific' element = {<SpecificPage></SpecificPage>}></Route>
           </Routes>
       </BrowserRouter>
       </header>
