@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function SubTitleForExercise(props){
     return(
         <div className="subTitleForExercise">
-            This is SubTitleForExercise Title
-            Today's sleepTime is {props.exercise}
+            피부에 영향을 준 운동시간
+            <br></br>
+            {props.exercise}
             
         </div>
     );

@@ -10,7 +10,7 @@ function MainPage(props){
  
     return(
         <div className="MainPage">
-          <MainTitle skinState = {props.skinState}></MainTitle>,
+          <MainTitle skinState = {props.skinState}></MainTitle>
           <ContainerForSubTitle morning ={props.morning} lunch ={props.lunch} dinner ={props.dinner} sleepTime= {props.sleepTime} exercise = {props.exercise}></ContainerForSubTitle>,
           <Link to= "/specific">
             <Button style={{position : "relative", top : "70px", margin : "20px"}} >더 자세히 알아보기</Button>
