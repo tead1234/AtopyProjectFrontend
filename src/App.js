@@ -12,7 +12,8 @@ import CreatePage from './component/CreatePage/CreatePage';
 import SpecificPage from './component/SpecifiPage.js/SpecificPage';
 function App() {
   const [data, setData] = useState([]);
-  let [Switch, setSwitch] = useState(true);
+  // Switch는 그냥 전역상태로 관리하는게 더 편하지 않을까?
+  let [Switch, setSwitch] = useState(false);
   let [morning, setMorning] = useState(null);
   let [lunch, setLunch] = useState(null);
   let [dinner, setDinner] = useState(null);
@@ -50,7 +51,7 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route path='/' element= {
-                <MainPage  morning ={morning} lunch = {lunch} dinner = {dinner} sleepTime = {sleepTime} exercise = {exercise}/>
+                <MainPage  morning ={morning} lunch = {lunch} dinner = {dinner} sleepTime = {sleepTime} exercise = {exercise} switch = {Switch} setSwitch = {setSwitch}/>
                 }></Route>
             <Route path='/specific' element = {<SpecificPage></SpecificPage>}></Route>
           </Routes>

@@ -1,60 +1,134 @@
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-  } from 'chart.js';
-import { Line } from "react-chartjs-2";
-import faker from 'faker';
-const Chart = () => {
-    ChartJS.register(
-        CategoryScale,
-        LinearScale,
-        PointElement,
-        LineElement,
-        Title,
-        Tooltip,
-        Legend
-      );
-      const options = {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top' as const,
-          },
-          title: {
-            display: true,
-            text: 'Chart.js Line Chart',
-          },
-        },
-      };
-      
-      const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-      
-      const data = {
-        labels,
-        datasets: [ {
-            label: 'Dataset 1',
-            data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-            borderColor: 'rgb(255, 99, 132)',
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-          },
-          {
-            label: 'Dataset 2',
-            data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-            borderColor: 'rgb(53, 162, 235)',
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          },
-        ],
-      };
-    retrun(
-        <>
-          <Line options={options} data={data}/>;
-        </>
-    );
-}
-export default Chart
+import { ResponsivePie } from '@nivo/pie'
+
+
+const ResponsivePie =  ({ data }) => (
+    <ResponsivePie
+        data={data}
+        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        valueFormat=" >-"
+        innerRadius={0.5}
+        padAngle={0.7}
+        cornerRadius={3}
+        activeOuterRadiusOffset={8}
+        borderWidth={1}
+        borderColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    0.2
+                ]
+            ]
+        }}
+        arcLinkLabelsSkipAngle={10}
+        arcLinkLabelsTextColor="#333333"
+        arcLinkLabelsThickness={2}
+        arcLinkLabelsColor={{ from: 'color' }}
+        arcLabelsSkipAngle={10}
+        arcLabelsTextColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    2
+                ]
+            ]
+        }}
+        defs={[
+            {
+                id: 'dots',
+                type: 'patternDots',
+                background: 'inherit',
+                color: 'rgba(255, 255, 255, 0.3)',
+                size: 4,
+                padding: 1,
+                stagger: true
+            },
+            {
+                id: 'lines',
+                type: 'patternLines',
+                background: 'inherit',
+                color: 'rgba(255, 255, 255, 0.3)',
+                rotation: -45,
+                lineWidth: 6,
+                spacing: 10
+            }
+        ]}
+        fill={[
+            {
+                match: {
+                    id: 'ruby'
+                },
+                id: 'dots'
+            },
+            {
+                match: {
+                    id: 'c'
+                },
+                id: 'dots'
+            },
+            {
+                match: {
+                    id: 'go'
+                },
+                id: 'dots'
+            },
+            {
+                match: {
+                    id: 'python'
+                },
+                id: 'dots'
+            },
+            {
+                match: {
+                    id: 'scala'
+                },
+                id: 'lines'
+            },
+            {
+                match: {
+                    id: 'lisp'
+                },
+                id: 'lines'
+            },
+            {
+                match: {
+                    id: 'elixir'
+                },
+                id: 'lines'
+            },
+            {
+                match: {
+                    id: 'javascript'
+                },
+                id: 'lines'
+            }
+        ]}
+        legends={[
+            {
+                anchor: 'bottom',
+                direction: 'row',
+                justify: false,
+                translateX: 0,
+                translateY: 56,
+                itemsSpacing: 0,
+                itemWidth: 100,
+                itemHeight: 18,
+                itemTextColor: '#999',
+                itemDirection: 'left-to-right',
+                itemOpacity: 1,
+                symbolSize: 18,
+                symbolShape: 'circle',
+                effects: [
+                    {
+                        on: 'hover',
+                        style: {
+                            itemTextColor: '#000'
+                        }
+                    }
+                ]
+            }
+        ]}
+    />
+);
+export default ResponsivePie;

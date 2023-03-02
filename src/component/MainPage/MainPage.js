@@ -2,13 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import ContainerForSubTitle from './ContainerForSubTitle';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import MainTitle from './mainTitle';
 import CreatePage from '../CreatePage/CreatePage';
 import React, { Component,  useEffect, useState } from 'react';
 
 function MainPage(props){
-  let [Switch, setSwitch] = useState(false);
  
     return(
         <div className="MainPage">
@@ -17,9 +15,9 @@ function MainPage(props){
           <Link to= "/specific">
             <Button style={{position : "relative", top : "70px", margin : "20px"}} >더 자세히 알아보기</Button>
           </Link>
-          <Button variant='secondary' onClick={() => {setSwitch(!Switch)}} style={{position : "relative", top : "70px"}}>오늘 상태 기록하기</Button>
+          <Button variant='secondary' onClick={() => props.setSwitch(!props.switch)} style={{position : "relative", top : "70px"}}>오늘 상태 기록하기</Button>
           {
-                Switch? <CreatePage Switch = {Switch} setSwitch = {setSwitch}></CreatePage> : null
+                props.switch? <CreatePage switch = {props.switch} setSwitch = {props.setSwitch}></CreatePage> : null
           }
         </div>
     );
