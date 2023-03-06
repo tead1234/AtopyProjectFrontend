@@ -42,9 +42,7 @@ function ControlledCarousel() {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-            <div style={{ display : "flex", width : "70vw",height : "30vh", marginBottom : "20vh"}}>
-          <ResponsivePie data = {data}></ResponsivePie>
-          </div>
+           
       </Carousel.Item>
     
     </Carousel>

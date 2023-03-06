@@ -20,6 +20,46 @@ function App() {
   let [sleepTime, setSleepTime] = useState(null);
   let [exercise, setExercise] = useState(null);
   const states =  ["morning", "lunch", "dinner", "sleepTime", "exercise"]; 
+  const data1 = [
+    {
+      "id": "매우 안좋음",
+      "label": "5",
+      "value": 3,
+      "color": "hsl(78, 70%, 50%)"
+    },
+    {
+      "id": "안좋음",
+      "label": "4",
+      "value": 2,
+      "color": "hsl(342, 70%, 50%)"
+    },
+    {
+      "id": "좋음",
+      "label": "2",
+      "value": 10,
+      "color": "hsl(42, 70%, 50%)"
+    }
+    
+    ];
+    const sleepData = [
+      {
+        "id": "Serie 1",
+        "data": [
+          {
+            "x": "3월 1일",
+            "y": 6
+          },
+          {
+            "x": "3월 2일",
+            "y": 7
+          },
+          {
+            "x": "3월 3일",
+            "y": 8
+          }
+        ]
+      }
+    ];
   useEffect(() => {
     const url = "http://localhost:8080/read/most?category="
     
@@ -53,7 +93,7 @@ function App() {
             <Route path='/' element= {
                 <MainPage  morning ={morning} lunch = {lunch} dinner = {dinner} sleepTime = {sleepTime} exercise = {exercise} switch = {Switch} setSwitch = {setSwitch}/>
                 }></Route>
-            <Route path='/specific' element = {<SpecificPage></SpecificPage>}></Route>
+            <Route path='/specific' element = {<SpecificPage data = {data1} sleepData = {sleepData}></SpecificPage>}></Route>
           </Routes>
       </BrowserRouter>
       </header>

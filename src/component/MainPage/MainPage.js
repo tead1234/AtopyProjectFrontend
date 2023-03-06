@@ -10,7 +10,7 @@ function MainPage(props){
  
     return(
         <div className="MainPage">
-          <MainTitle skinState = {props.skinState}></MainTitle>
+          <MainTitle word={["1","2","3","4","5", "6"]}></MainTitle>
           <ContainerForSubTitle morning ={props.morning} lunch ={props.lunch} dinner ={props.dinner} sleepTime= {props.sleepTime} exercise = {props.exercise}></ContainerForSubTitle>,
           <Link to= "/specific">
             <Button style={{position : "relative", top : "70px", margin : "20px"}} >더 자세히 알아보기</Button>
