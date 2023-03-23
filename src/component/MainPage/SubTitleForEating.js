@@ -6,7 +6,7 @@ function SubTitleForEating(props){
             <div className="subTitleForEating">
                 피부에 안좋은 영향을 준 식사들
                 <br></br>
-                <ul>
+                <ul style={ {listStyle : 'none'}}>
                     <li>{props.morning}</li>
                     <li>{props.lunch}</li>
                     <li>{props.dinner}</li>
