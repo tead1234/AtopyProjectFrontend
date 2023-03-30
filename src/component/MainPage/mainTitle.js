@@ -6,7 +6,7 @@ import Bounty from 'react-bounty';
 
 function MainTitle(){
 
-  //
+  //ddwdwdw
   return (
     <div className="slot">
       <h2>오늘의 피부상태는 ?</h2>
